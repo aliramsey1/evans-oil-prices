@@ -35,7 +35,7 @@ def decode_html(response):
                     content = response.content
                     if content[:2] == b'\x1f\x8b':
                                     return gzip.decompress(content).decode('utf-8', errors='replace')
-                return content.decode('utf-8', errors='replace')
+                    return content.decode('utf-8', errors='replace')
         except Exception:
                 return response.text
 
