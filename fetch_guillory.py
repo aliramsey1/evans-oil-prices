@@ -52,9 +52,9 @@ def guillory_login():
         })
 
     # Step 1: GET login page for CSRF token
-        login_url = GUILLORY_URL + '/account/?login'
-        r1 = session.get(login_url)
-        html1 = decode_html(r1)
+    login_url = GUILLORY_URL + '/account/?login'
+    r1 = session.get(login_url)
+    print('  Step1 GET login: status=' + str(r1.status_code) + ', len=' + str(len(html1)))
         print('  Step1 GET login: status=' + str(r1.status_code) + ', len=' + str(len(html1)))
 
     soup1 = BeautifulSoup(html1, 'html.parser')
